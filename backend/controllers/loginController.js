@@ -21,7 +21,7 @@ const getUsers = async(req,res) => {
     }
     }
 
-// delete a user
+// delete a user 
 const deleteUser = async(req,res) => {
   
   const {id} = req.params
