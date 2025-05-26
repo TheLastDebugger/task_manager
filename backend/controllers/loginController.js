@@ -43,7 +43,6 @@ const deleteUser = async(req,res) => {
 }
 
 // update a workout 
-
 const updateUser = async(req,res) =>{
 
   const {id} = req.params
@@ -65,9 +64,29 @@ const updateUser = async(req,res) =>{
 
 }
 
+//authUser
+const authUser = async(req,res) => {
+
+  const { username, password } = req.body;
+  const user = await loginModel.findOne({ username });
+
+  if (!user) {
+
+    return res.status(401).json({message: "User Not Found",status:false});
+  } else {
+
+    if (user.password === password) {
+
+      return res.status(200).json({status:true,message:"User and Password Correct"})
+    }
+  }
+
+}
+
 module.exports = {
     createUser,
     getUsers,
     deleteUser,
-    updateUser
+    updateUser,
+    authUser
 }

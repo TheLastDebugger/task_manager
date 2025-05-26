@@ -11,4 +11,6 @@ router.delete("/",loginController.deleteUser)
 
 router.patch("/",loginController.updateUser)
 
+router.post("/authUser",loginController.authUser)
+
 module.exports = router
