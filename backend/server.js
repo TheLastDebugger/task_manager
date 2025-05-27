@@ -20,7 +20,7 @@ mongoose
   .then(() => {
     //listen for request
     app.listen(port, () => {
-      console.log("Listeninig.. on port !!!", port);
+      console.log("Listeninig... on port !!!", port);
     });
   })
   .catch((error) => {
